@@ -10,6 +10,7 @@ def getCovidData():
     total_deaths = str(json_data['deaths'])
     total_recovered = str(json_data['recovered'])
     total_active = str(json_data['active'])
+    critical = str(json_data['critical'])
     cases_today = str(json_data['todayCases'])
     deaths_today = str(json_data['todayDeaths'])
     recovered_today = str(json_data['todayDeaths'])
@@ -18,7 +19,7 @@ def getCovidData():
     date = datetime.datetime.fromtimestamp(time_of_data / 1e3)
     lable.config(
         text="Total cases:" + total_cases + "\nTotal Deaths:" + total_deaths + "\nTotal Recovered:" + total_recovered
-             + "\nTotal Active cases:" + total_active)
+             + "\nTotal Active cases:" + total_active + "\nCritical cases:" + critical)
 
     lable1.config(
         text="Cases Today:" + cases_today + "\n Deaths Today:" + deaths_today + "\n Recovered Today:" + recovered_today)
